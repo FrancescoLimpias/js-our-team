@@ -1,0 +1,81 @@
+/* GENERAL  */
+*{
+    box-sizing: border-box;
+}
+/* just for compatibility */
+*::after{box-sizing: border-box;}
+*::before{box-sizing: border-box;}
+
+body{
+    background-color: white;
+
+    margin: auto;
+    width: 70%;
+
+    font-family: 'Comfortaa', cursive;
+}
+
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* HEADER  */
+#sectionTeam header{
+    text-align: center;
+    margin-bottom: 2em;
+}
+#sectionTeam h2{
+    margin-bottom:  1em;
+
+    color: rgb(224, 39, 101);
+    font-family: 'Fredoka One', cursive;
+    font-size: 3em;
+}
+#sectionTeam p:first-of-type{
+    font-size: 2em;
+}
+
+/* CARDS */
+.card{
+    float: left;
+    width: 30%;
+    margin: 1.5%;
+
+    background-color: rgb(0, 17, 17);
+    color: white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0);
+    text-decoration: none;
+
+    transition: border-right 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover{
+    /* border-right: 0.6vw inset rgb(224, 39, 101); */
+    box-shadow: 0px 2px 20px rgba(0, 0, 0);
+}
+.card img{
+    float: left;
+    max-width: 30%;
+    margin-right: 3%;
+}
+.card h3{
+    margin: 2%;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5vw;
+    font-weight: 100;
+}
+.card :not(h3){
+    font-size: 0.8vw;
+    font-weight: 600;
+}
+.card span{
+    display: block;
+    margin-bottom: .5em;
+}
+.card :last-child{
+    color: cyan;
+}
+.card:hover :last-child{
+    text-decoration: underline;
+}

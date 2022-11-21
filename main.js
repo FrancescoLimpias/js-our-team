@@ -9,23 +9,33 @@ addMate("Angela Lopez", "Social Media Manager", "img/angela-lopez-social-media-m
 addMate("Scott Estrada", "Developer", "img/scott-estrada-developer.jpg");
 addMate("Barbara Ramos", "Graphic Designer", "img/barbara-ramos-graphic-designer.jpg");
 
-// Print team info on console
-for(let i = 0; i < data.length; i++ ){
-    console.log("-------------------");
+// References
+const bodyElement = document.body;
 
-    for(let info in data[i]){
-        console.log(`${info}: ${data[i][info]}`)
-    }
-}
-console.log("-------------------");
+// Print team info on console
+iterateDo((info, value) => console.log(`${info}: ${value}`));
+
+// Print team info on DOM
+iterateDo((info, value) => bodyElement.insertAdjacentHTML("beforeend", `${info}: ${value}<br>`));
 
 // Function to add mate to team array
-function addMate(name, role, picturePath){
-    
+function addMate(name, role, picturePath) {
+
     data.push({
         name: name,
         role: role,
         pic: picturePath,
     });
 
+}
+
+// Util for quick iteration over data array
+function iterateDo(print) {
+    for (let i = 0; i < data.length; i++) {
+        for (let info in data[i]) {
+
+            print(info, data[i][info]);
+
+        }
+    }
 }

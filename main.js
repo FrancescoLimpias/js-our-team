@@ -9,6 +9,16 @@ addMate("Angela Lopez", "Social Media Manager", "img/angela-lopez-social-media-m
 addMate("Scott Estrada", "Developer", "img/scott-estrada-developer.jpg");
 addMate("Barbara Ramos", "Graphic Designer", "img/barbara-ramos-graphic-designer.jpg");
 
+// Print team info on console
+for(let i = 0; i < data.length; i++ ){
+    console.log("-------------------");
+
+    for(let info in data[i]){
+        console.log(`${info}: ${data[i][info]}`)
+    }
+}
+console.log("-------------------");
+
 // Function to add mate to team array
 function addMate(name, role, picturePath){
     
